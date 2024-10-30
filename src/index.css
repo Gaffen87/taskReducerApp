@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* *,
+*::before,
+*::after {
+	border: lime 1px solid;
+} */
+
+body {
+	background-color: #021526;
+	color: white;
+}
