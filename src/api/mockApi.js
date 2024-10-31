@@ -29,10 +29,6 @@ export default function makeServer() {
 				return schema.tasks.all();
 			});
 
-			this.get("/api/tasks/completed", (schema) => {
-				return schema.tasks.where({ completed: true });
-			});
-
 			this.post("/api/tasks", (schema, request) => {
 				const attrs = JSON.parse(request.requestBody);
 				return schema.tasks.create(attrs);

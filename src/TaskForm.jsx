@@ -1,11 +1,13 @@
 import { useState } from "react";
+import { useTasks } from "./context/useTasks";
 
-const TaskForm = ({ handleSubmit }) => {
+const TaskForm = () => {
 	const [task, setTask] = useState({
 		title: "",
 		description: "",
 		completed: false,
 	});
+	const { handleSubmit } = useTasks();
 
 	return (
 		<form
@@ -17,27 +19,25 @@ const TaskForm = ({ handleSubmit }) => {
 			}}
 		>
 			<input
-				className="bg-primary p-1"
+				className="bg-primary bg-opacity-30 p-1"
 				type="text"
 				placeholder="Title"
-				minLength={3}
 				value={task.title}
 				onChange={(e) => {
 					setTask({ ...task, title: e.target.value });
 				}}
 			/>
 			<input
-				className="bg-primary p-1"
+				className="bg-primary bg-opacity-30 p-1"
 				type="text"
 				placeholder="Description"
-				minLength={3}
 				value={task.description}
 				onChange={(e) => {
 					setTask({ ...task, description: e.target.value });
 				}}
 			/>
 			<button
-				className="bg-danger text-black px-2 py-1 rounded font-bold cursor-pointer"
+				className="bg-danger border-4 border-black text-black px-2 py-1 rounded font-bold cursor-pointer"
 				type="submit"
 			>
 				Add Task

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useTasks } from "./context/useTasks";
 
-const Task = ({ task, handleEdit, handleDelete }) => {
+const Task = ({ task }) => {
+	const { handleEdit, handleDelete } = useTasks();
 	const [editTask, setEditTask] = useState(task);
 	const [edit, setEdit] = useState(false);
 
