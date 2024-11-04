@@ -10,7 +10,6 @@ export const taskReducer = (state, action) => {
 			};
 		}
 		case "updateTask": {
-			console.log(action.payload);
 			return {
 				...state,
 				tasks: state.tasks.map((task) =>
